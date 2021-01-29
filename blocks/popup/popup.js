@@ -30,9 +30,6 @@ function setUserData (name, about) {
 
     nameField.textContent = name;
     aboutField.textContent = about;
-
-    return
-
 }
 
 function formSubmitHandler (evt) {
