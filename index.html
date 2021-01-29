@@ -19,7 +19,7 @@
 
                 <ul class="profile__info">
                     <li class="profile__info-item">
-                        <p class="profile__name">Жак-Ив Кусто</p>
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
                         <a href="#" class="profile__btn profile__btn_edit"></a>
                     </li>
                     <li class="profile__info-item">
@@ -86,12 +86,25 @@
                         <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
 
                         <div class="elements__text">
-                            <p class="elements__item-title">Карачаевск</p>
+                            <p class="elements__item-title">Карачаево-Черкессия</p>
 
                             <a href="#" class="elements__item-like"></a>
                         </div>
                     </li>
                 </ul>
+            </section>
+
+            <section class="popup">
+                <div class="popup__container">
+                    <a href="#" class="popup__close-btn"></a>
+
+                    <h3 class="popup__title">Редактировать профиль</h3>
+                    <form class="form form_edit">
+                        <input class="form__input" type="text" placeholder="Имя" name="name">
+                        <input class="form__input"type="text" placeholder="Немного о себе" name="about">
+                        <submit class="form__submit">Сохранить</submit>
+                    </form>
+                </div>
             </section>
         </main>
 
