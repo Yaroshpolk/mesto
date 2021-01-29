@@ -5,3 +5,9 @@
     margin: 0;
     display: inline-block;
 }
+
+@media screen and (max-width: 410px){
+    .profile__name {
+        font-size: 27px;
+    }
+}

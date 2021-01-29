@@ -6,3 +6,9 @@
     margin-left: auto;
 }
 
+@media screen and (max-width: 740px){
+    .profile__btn_add {
+        width: 100%;
+        margin: 0;
+    }
+}

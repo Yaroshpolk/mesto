@@ -5,3 +5,11 @@
     margin-left: 18px;
     background: url(../../../../images/btns/edit-btn.svg) center no-repeat;
 }
+
+@media screen and (max-width: 410px){
+    .profile__btn_edit {
+        height: 18px;
+        width: 18px;
+        margin-left: 10px;
+    }
+}
