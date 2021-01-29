@@ -1,0 +1,7 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 40px 0 51px 0;
+}

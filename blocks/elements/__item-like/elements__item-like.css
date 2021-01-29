@@ -1,0 +1,10 @@
+.elements__item-like {
+    height: 19px;
+    width: 22px;
+    background: url('../../../images/btns/like-btn.svg') center;
+    transition: opacity .2s ease;
+}
+
+.elements__item-like:hover {
+    opacity: .5;
+}

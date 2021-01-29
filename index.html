@@ -5,7 +5,7 @@
     <title>Mesto Russia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body class="root">
     <div class="content">
@@ -14,11 +14,89 @@
         </header>
 
         <main class="main">
+            <section class="profile">
+                <img src="images/avatar.png" alt="Аватар" class="profile__avatar">
 
+                <ul class="profile__info">
+                    <li class="profile__info-item">
+                        <p class="profile__name">Жак-Ив Кусто</p>
+                        <a href="#" class="profile__btn profile__btn_edit"></a>
+                    </li>
+                    <li class="profile__info-item">
+                        <p class="profile__about">Исследователь океана</p>
+                    </li>
+                </ul>
+
+                <a href="#" class="profile__btn profile__btn_add"></a>
+            </section>
+
+            <section class="elements">
+                <ul class="elements__list">
+                    <li class="elements__item">
+                        <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Карачаевск</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+
+                    <li class="elements__item">
+                        <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Гора Эльбрус</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+
+                    <li class="elements__item">
+                        <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Домбай</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+
+                    <li class="elements__item">
+                        <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Гора Эльбрус</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+
+                    <li class="elements__item">
+                        <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Домбай</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+
+                    <li class="elements__item">
+                        <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
+
+                        <div class="elements__text">
+                            <p class="elements__item-title">Карачаевск</p>
+
+                            <a href="#" class="elements__item-like"></a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </main>
 
         <footer class="footer">
-
+            <p class="footer__copyright">© 2020 Mesto Russia</p>
         </footer>
     </div>
 </body>
