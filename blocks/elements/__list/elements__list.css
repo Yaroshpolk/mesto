@@ -20,3 +20,10 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (max-width: 360px){
+    .elements__list {
+        margin-right: 19px;
+        margin-left: 19px;
+    }
+}

@@ -12,3 +12,10 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 360px){
+    .profile {
+        margin-right: 19px;
+        margin-left: 19px;
+    }
+}
