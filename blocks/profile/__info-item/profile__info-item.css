@@ -5,9 +5,3 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-
-@media screen and (max-width: 740px){
-    .profile__info-item {
-        justify-content: center;
-    }
-}
