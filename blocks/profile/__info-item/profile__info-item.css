@@ -4,5 +4,10 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+}
+
+@media screen and (max-width: 740px){
+    .profile__info-item {
+        justify-content: center;
+    }
 }

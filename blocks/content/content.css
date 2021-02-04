@@ -5,7 +5,7 @@
     color: #fff;
 }
 
-@media screen and (max-width: 860px){
+@media screen and (max-width: 930px){
     .content {
         margin: 45px 30px 60px 30px;
     }

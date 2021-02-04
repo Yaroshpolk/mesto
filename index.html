@@ -17,17 +17,17 @@
             <section class="profile">
                 <img src="images/avatar.png" alt="Аватар" class="profile__avatar">
 
-                <ul class="profile__info">
-                    <li class="profile__info-item">
+                <div class="profile__info">
+                    <div class="profile__info-item">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button class="profile__btn profile__btn_edit"></button>
-                    </li>
-                    <li class="profile__info-item">
+                        <button class="profile__btn profile__btn_edit" type="button"></button>
+                    </div>
+                    <div class="profile__info-item">
                         <p class="profile__about">Исследователь океана</p>
-                    </li>
-                </ul>
+                    </div>
+                </div>
 
-                <button class="profile__btn profile__btn_add"></button>
+                <button class="profile__btn profile__btn_add" type="button"></button>
             </section>
 
             <section class="elements">
@@ -38,7 +38,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Карачаевск</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Гора Эльбрус</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Домбай</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Гора Эльбрус</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Домбай</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                         <div class="elements__text">
                             <p class="elements__item-title">Карачаево-Черкессия</p>
 
-                            <button class="elements__item-like"></button>
+                            <button class="elements__item-like" type="button"></button>
                         </div>
                     </div>
                 </div>
@@ -97,10 +97,10 @@
 
         <section class="popup">
             <div class="popup__container">
-                <button class="popup__close-btn"></button>
+                <button class="popup__close-btn" type="button"></button>
 
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="form form_edit" name="edit-form">
+                <form class="form" name="edit-form">
                     <input class="form__input" type="text" placeholder="Имя" name="name">
                     <input class="form__input" type="text" placeholder="Немного о себе" name="about">
                     <button class="form__submit" type="submit">Сохранить</button>
