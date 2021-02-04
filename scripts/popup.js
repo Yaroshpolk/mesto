@@ -5,15 +5,7 @@ let form = document.querySelector('.form_edit');
 let nameField = form.elements.name;
 let aboutField = form.elements.about;
 
-function popupShow (blockName) {
-    let popupBlock = document.querySelector(`.${blockName}`);
-    popupBlock.classList.add('popup_opened');
-}
-
-function popupHide (blockName) {
-    let popupBlock = document.querySelector(`.${blockName}`);
-    popupBlock.classList.remove('popup_opened');
-}
+let popupBlock = document.querySelector('.popup');
 
 function getUserData () {
     let userName = document.querySelector('.profile__name').textContent;
@@ -32,6 +24,24 @@ function setUserData (name, about) {
     aboutField.textContent = about;
 }
 
+function popupShow () {
+    event.preventDefault();
+
+    nameField.value = getUserData().userName;
+    aboutField.value = getUserData().userAbout;
+
+    popupBlock.classList.add('popup_opened');
+}
+
+function popupHide (blockName) {
+    event.preventDefault();
+
+    nameField.value = '';
+    aboutField.value = '';
+
+    popupBlock.classList.remove('popup_opened');
+}
+
 function formSubmitHandler (evt) {
     evt.preventDefault();
 
@@ -39,28 +49,11 @@ function formSubmitHandler (evt) {
     let aboutValue = aboutField.value;
 
     setUserData(nameValue, aboutValue);
-    popupHide('popup');
+    popupHide();
 }
 
-// popup show
-popupOpenBtn.addEventListener('click', function (){
-    event.preventDefault();
-
-    nameField.value = getUserData().userName;
-    aboutField.value = getUserData().userAbout;
-
-    popupShow('popup');
-});
-
-// popup hide
-popupCloseBtn.addEventListener('click', function () {
-    event.preventDefault();
-
-    nameField.value = '';
-    aboutField.value = '';
-
-    popupHide('popup');
-});
+popupOpenBtn.addEventListener('click', popupShow);
+popupCloseBtn.addEventListener('click', popupHide);
 
 //form submit
 form.addEventListener('submit', formSubmitHandler);

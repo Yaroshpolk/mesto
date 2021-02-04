@@ -1,5 +1,5 @@
 /********************/
-/* Main page styles
+/* Main page pages
 /********************/
 
 /* normalize.css */
@@ -8,24 +8,23 @@
 /* page fonts */
 @import url('../vendor/fonts/Inter/Inter.css');
 
-/* root styles */
+/* root pages */
 @import url('../blocks/root/root.css');
 
-/* data forms styles */
+/* data forms pages */
 @import url('../blocks/form/form.css');
-@import url('../blocks/form/_edit/form_edit.css');
 @import url('../blocks/form/__input/form__input.css');
 @import url('../blocks/form/__submit/form__submit.css');
 
 
-/* content block styles */
+/* content block pages */
 @import url('../blocks/content/content.css');
 
-/* header block styles */
+/* header block pages */
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
 
-/* profile block styles */
+/* profile block pages */
 @import url('../blocks/profile/profile.css');
 @import url('../blocks/profile/__avatar/profile__avatar.css');
 @import url('../blocks/profile/__info/profile__info.css');
@@ -36,7 +35,7 @@
 @import url('../blocks/profile/__btn/_add/profile__btn_add.css');
 @import url('../blocks/profile/__btn/_edit/profile__btn_edit.css');
 
-/* elements block styles */
+/* elements block pages */
 @import url('../blocks/elements/elements.css');
 @import url('../blocks/elements/__list/elements__list.css');
 @import url('../blocks/elements/__item/elements__item.css');
@@ -45,11 +44,11 @@
 @import url('../blocks/elements/__item-title/elements__item-title.css');
 @import url('../blocks/elements/__text/elements__text.css');
 
-/* footer block styles */
+/* footer block pages */
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');
 
-/* popup block styles */
+/* popup block pages */
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/popup/_opened/popup_opened.css');
 @import url('../blocks/popup/__container/popup__container.css');

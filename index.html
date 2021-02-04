@@ -5,7 +5,7 @@
     <title>Mesto Russia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="root">
     <div class="content">
@@ -20,100 +20,99 @@
                 <ul class="profile__info">
                     <li class="profile__info-item">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <a href="#" class="profile__btn profile__btn_edit" target="_self"></a>
+                        <button class="profile__btn profile__btn_edit"></button>
                     </li>
                     <li class="profile__info-item">
                         <p class="profile__about">Исследователь океана</p>
                     </li>
                 </ul>
 
-                <a href="#" class="profile__btn profile__btn_add" target="_self"></a>
+                <button class="profile__btn profile__btn_add"></button>
             </section>
 
             <section class="elements">
-                <ul class="elements__list">
-                    <li class="elements__item">
+                <div class="elements__list">
+                    <div class="elements__item">
                         <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Карачаевск</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="elements__item">
+                    <div class="elements__item">
                         <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Гора Эльбрус</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="elements__item">
+                    <div class="elements__item">
                         <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Домбай</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="elements__item">
+                    <div class="elements__item">
                         <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Гора Эльбрус</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="elements__item">
+                    <div class="elements__item">
                         <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Домбай</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="elements__item">
+                    <div class="elements__item">
                         <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
 
                         <div class="elements__text">
                             <p class="elements__item-title">Карачаево-Черкессия</p>
 
-                            <a href="#" class="elements__item-like" target="_self"></a>
+                            <button class="elements__item-like"></button>
                         </div>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="popup">
-                <div class="popup__container">
-                    <a href="#" class="popup__close-btn" target="_self"></a>
-
-                    <h3 class="popup__title">Редактировать профиль</h3>
-                    <form class="form form_edit">
-                        <input class="form__input" type="text" placeholder="Имя" name="name">
-                        <input class="form__input"type="text" placeholder="Немного о себе" name="about">
-
-                        <button class="form__submit" type="submit">Сохранить</button>
-                    </form>
+                    </div>
                 </div>
             </section>
         </main>
+
+        <section class="popup">
+            <div class="popup__container">
+                <button class="popup__close-btn"></button>
+
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <form class="form form_edit" name="edit-form">
+                    <input class="form__input" type="text" placeholder="Имя" name="name">
+                    <input class="form__input"type="text" placeholder="Немного о себе" name="about">
+                    <button class="form__submit" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </section>
 
         <footer class="footer">
             <p class="footer__copyright">© 2020 Mesto Russia</p>
         </footer>
     </div>
 
-<script src="blocks/popup/popup.js" type="text/javascript"></script>
+<script src="scripts/popup.js" type="text/javascript"></script>
 </body>
 </html>

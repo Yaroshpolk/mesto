@@ -4,6 +4,11 @@
     width: 150px;
     background: url(../../../../images/btns/add-btn.svg) center no-repeat;
     margin-left: auto;
+    cursor: pointer;
+}
+
+.profile__btn_add:focus {
+    outline: none;
 }
 
 @media screen and (max-width: 740px){
