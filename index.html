@@ -40,7 +40,7 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="form" name="editForm">
                     <input class="form__input" type="text" placeholder="Имя" name="name">
-                    <input class="form__input" type="text" placeholder="Немного о себе" name="about">
+                    <input class="form__input" type="text" placeholder="Немного о себе" name="about" required>
                     <button class="form__submit" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -62,7 +62,7 @@
         <section class="popup popup_view">
             <div class="popup__container">
                 <button class="popup__close-btn" type="button"></button>
-                <img src="" class="popup__img">
+                <img class="popup__img">
                 <p class="popup__subimg"></p>
             </div>
         </section>
@@ -74,7 +74,7 @@
 
     <template id="card-template">
         <div class="elements__item">
-            <img src="" class="elements__item-image">
+            <img class="elements__item-image">
 
             <div class="elements__text">
                 <p class="elements__item-title"></p>
