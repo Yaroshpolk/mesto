@@ -29,80 +29,41 @@
             </section>
 
             <section class="elements">
-                <div class="elements__list">
-                    <div class="elements__item">
-                        <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Карачаевск</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="elements__item">
-                        <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Гора Эльбрус</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="elements__item">
-                        <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Домбай</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="elements__item">
-                        <img src="images/posts/Elbrus.png" alt="Гора эльбрус" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Гора Эльбрус</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="elements__item">
-                        <img src="images/posts/Dombai.png" alt="Домбай" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Домбай</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="elements__item">
-                        <img src="images/posts/Karachaevsk.png" alt="Карачаевск" class="elements__item-image">
-
-                        <div class="elements__text">
-                            <p class="elements__item-title">Карачаево-Черкессия</p>
-
-                            <button class="elements__item-like" type="button"></button>
-                        </div>
-                    </div>
-                </div>
+                <div class="elements__list"></div>
             </section>
         </main>
 
-        <section class="popup">
+        <section class="popup popup_edit">
             <div class="popup__container">
                 <button class="popup__close-btn" type="button"></button>
 
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="form" name="edit-form">
+                <form class="form" name="editForm">
                     <input class="form__input" type="text" placeholder="Имя" name="name">
                     <input class="form__input" type="text" placeholder="Немного о себе" name="about">
                     <button class="form__submit" type="submit">Сохранить</button>
                 </form>
+            </div>
+        </section>
+
+        <section class="popup popup_add">
+            <div class="popup__container">
+                <button class="popup__close-btn" type="button"></button>
+
+                <h3 class="popup__title">Новое место</h3>
+                <form class="form" name="addCardForm">
+                    <input class="form__input" type="text" placeholder="Название" name="title">
+                    <input class="form__input" type="text" placeholder="Ссылка на картинку" name="source">
+                    <button class="form__submit" type="submit">Создать</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_view">
+            <div class="popup__container">
+                <button class="popup__close-btn" type="button"></button>
+                <img src="" class="popup__img">
+                <p class="popup__subimg"></p>
             </div>
         </section>
 
@@ -111,6 +72,21 @@
         </footer>
     </div>
 
-<script src="scripts/popup.js"></script>
+    <template id="card-template">
+        <div class="elements__item">
+            <img src="" class="elements__item-image">
+
+            <div class="elements__text">
+                <p class="elements__item-title"></p>
+
+                <button class="elements__item-like" type="button"></button>
+            </div>
+
+            <button class="elements__item-trash" type="button"></button>
+        </div>
+    </template>
+
+    <script src="scripts/cards.js"></script>
+    <script src="scripts/popup.js"></script>
 </body>
 </html>

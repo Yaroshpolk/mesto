@@ -1,5 +1,6 @@
 .elements__item-image {
     width: 100%;
-    height: auto;
+    height: 282px;
     display: block;
+    cursor: pointer;
 }
