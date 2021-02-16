@@ -24,7 +24,7 @@ const setUserInfo = () => {
 }
 
 //Фукнция изменения данных пользователя
-const editProfile = () => {
+function editProfile () {
     event.preventDefault();
 
     setUserInfo();
@@ -35,11 +35,10 @@ const editProfile = () => {
 function addCard () {
     event.preventDefault();
 
-    const name = addCardForm.elements.title.value;
-    const link = addCardForm.elements.source.value;
-    initialCards.push({name, link});
-
-    renderCard(initialCards[initialCards.length-1]);
+    renderCard({
+        name: addCardForm.elements.title.value,
+        link: addCardForm.elements.source.value
+    });
     addCardForm.reset();
     popupHide(this);
 }

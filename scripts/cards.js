@@ -10,7 +10,7 @@ const getCardElement = (data) => {
 
     cardElement.querySelector('.elements__item-like').addEventListener('click', handleLikeIcon);
     cardElement.querySelector('.elements__item-trash').addEventListener('click', handleDeleteCard);
-    cardElement.querySelector('.elements__item-image').addEventListener('click', () => handlePreviewPicture(data));
+    cardImage.addEventListener('click', () => handlePreviewPicture(data));
 
     return cardElement;
 }
