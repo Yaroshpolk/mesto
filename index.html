@@ -39,7 +39,7 @@
 
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="form" name="editForm">
-                    <input class="form__input" type="text" placeholder="Имя" name="name">
+                    <input class="form__input" type="text" placeholder="Имя" name="name" required>
                     <input class="form__input" type="text" placeholder="Немного о себе" name="about" required>
                     <button class="form__submit" type="submit">Сохранить</button>
                 </form>
@@ -52,8 +52,8 @@
 
                 <h3 class="popup__title">Новое место</h3>
                 <form class="form" name="addCardForm">
-                    <input class="form__input" type="text" placeholder="Название" name="title">
-                    <input class="form__input" type="text" placeholder="Ссылка на картинку" name="source">
+                    <input class="form__input" type="text" placeholder="Название" name="title" required>
+                    <input class="form__input" type="text" placeholder="Ссылка на картинку" name="source" required>
                     <button class="form__submit" type="submit">Создать</button>
                 </form>
             </div>
@@ -86,6 +86,7 @@
         </div>
     </template>
 
+    <script src="scripts/constants.js"></script>
     <script src="scripts/cards.js"></script>
     <script src="scripts/popup.js"></script>
 </body>

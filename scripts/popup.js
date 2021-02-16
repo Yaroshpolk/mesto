@@ -1,39 +1,33 @@
-const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
-const addCardBtn = document.querySelector('.profile__btn_add');
-const editProfileBtn = document.querySelector('.profile__btn_edit');
-
-const editForm = document.querySelector('form[name="editForm"]');
-const profileName = document.querySelector('.profile__name');
-const profileAbout = document.querySelector('.profile__about');
-const nameField = editForm.elements.name;
-const aboutField = editForm.elements.about;
-
-const addCardForm = document.querySelector('form[name="addCardForm"]');
-
-//Функция отображения попапа
-function popupShow (popupBlock) {
+// Функция отображения попапа
+const popupShow = (popupBlock) => {
     event.preventDefault();
-
-    nameField.value = profileName.textContent;
-    aboutField.value = profileAbout.textContent;
 
     document.querySelector(`.${popupBlock}`).classList.add('popup_opened');
-}
+};
 
-//Функция скрывания попапа
-function popupHide (block) {
+// Функция скрытия попапа
+const popupHide = (block) => {
     event.preventDefault();
-
     block.closest('.popup').classList.remove('popup_opened');
+};
+
+// Функция получения информации о пользователе
+const getUserInfo = () => {
+    nameField.value = profileName.textContent;
+    aboutField.value = profileAbout.textContent;
+};
+
+// Функция редактирования информации о пользователе
+const setUserInfo = () => {
+    profileName.textContent = nameField.value;
+    profileAbout.textContent = aboutField.value;
 }
 
 //Фукнция изменения данных пользователя
-function editProfile () {
+const editProfile = () => {
     event.preventDefault();
 
-    profileName.textContent = nameField.value;
-    profileAbout.textContent = aboutField.value;
-
+    setUserInfo();
     popupHide(this);
 }
 
@@ -41,22 +35,19 @@ function editProfile () {
 function addCard () {
     event.preventDefault();
 
-    let cardTitle = addCardForm.elements.title.value;
-    let cardSrc = addCardForm.elements.source.value;
+    const name = addCardForm.elements.title.value;
+    const link = addCardForm.elements.source.value;
+    initialCards.push({name, link});
 
-    if (cardTitle === '') {
-        cardTitle = 'Название отсутствует';
-    }
-
-    createCard(cardTitle, cardSrc);
-
-    addCardForm.elements.title.value = '';
-    addCardForm.elements.source.value = '';
-
+    renderCard(initialCards[initialCards.length-1]);
+    addCardForm.reset();
     popupHide(this);
 }
 
-editProfileBtn.addEventListener('click',() =>  popupShow('popup_edit'));
+editProfileBtn.addEventListener('click',() => {
+    popupShow('popup_edit');
+    getUserInfo();
+});
 addCardBtn.addEventListener('click', () => popupShow('popup_add'));
 
 //Обработка закрытия попапов
