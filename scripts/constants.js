@@ -30,6 +30,7 @@ const subImg = document.querySelector('.popup__subimg');
 const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
 const addCardBtn = document.querySelector('.profile__btn_add');
 const editProfileBtn = document.querySelector('.profile__btn_edit');
+const popupsList = Array.from(document.querySelectorAll('.popup'));
 
 const editForm = document.querySelector('form[name="editForm"]');
 const profileName = document.querySelector('.profile__name');

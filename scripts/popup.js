@@ -8,7 +8,10 @@ const popupShow = (popupBlock) => {
 // Функция скрытия попапа
 const popupHide = (block) => {
     event.preventDefault();
-    block.closest('.popup').classList.remove('popup_opened');
+    const popupBlock = block.closest('.popup');
+
+    popupBlock.classList.remove('popup_opened');
+    popupBlock.querySelector('.form').reset();
 };
 
 // Функция получения информации о пользователе
@@ -53,6 +56,26 @@ addCardBtn.addEventListener('click', () => popupShow('popup_add'));
 popupCloseBtn.forEach(function (item) {
     item.addEventListener('click', () => popupHide(item));
 });
+
+//Обработка закрытия попапа при нажатии на escape
+document.addEventListener('keydown', (evt) => {
+   popupsList.forEach((popupElement) => {
+       if (popupElement.classList.contains('popup_opened') && evt.key === "Escape") {
+           popupHide(popupElement);
+       }
+   })
+});
+
+//Обработка закрытия попапа при клику на оверлей
+popupsList.forEach((popupElement) => {
+    popupElement.addEventListener('click', (evt) => {
+        popupHide(evt.currentTarget);
+    })
+
+    popupElement.querySelector('.popup__container').addEventListener('click', evt => {
+        evt.stopPropagation();
+    })
+})
 
 //form submit
 editForm.addEventListener('submit', editProfile);
