@@ -36,12 +36,10 @@ const handlePreviewPicture = (data) => {
 
 // Функция рендеринга карточек
 const renderCard = (data) => {
-    const cardContainer = document.querySelector('.elements__list');
-
     cardContainer.prepend(getCardElement(data));
 };
 
 // Отрисовка карточек из массива
-initialCards.forEach((item, index) => renderCard(initialCards[index]));
+initialCards.forEach(renderCard);
 
 

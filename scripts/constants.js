@@ -27,7 +27,6 @@ const initialCards = [
 const imgContainer =  document.querySelector('.popup__img');
 const subImg = document.querySelector('.popup__subimg');
 
-const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
 const addCardBtn = document.querySelector('.profile__btn_add');
 const editProfileBtn = document.querySelector('.profile__btn_edit');
 const popupsList = Array.from(document.querySelectorAll('.popup'));
@@ -39,3 +38,4 @@ const nameField = editForm.elements.name;
 const aboutField = editForm.elements.about;
 
 const addCardForm = document.querySelector('form[name="addCardForm"]');
+const cardContainer = document.querySelector('.elements__list');
