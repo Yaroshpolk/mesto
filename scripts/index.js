@@ -24,8 +24,6 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-const imgContainer =  document.querySelector('.popup__img');
-const subImg = document.querySelector('.popup__subimg');
 
 const addCardBtn = document.querySelector('.profile__btn_add');
 const editProfileBtn = document.querySelector('.profile__btn_edit');

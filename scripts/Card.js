@@ -1,3 +1,18 @@
+const imgContainer =  document.querySelector('.popup__img');
+const subImg = document.querySelector('.popup__subimg');
+
+const popupShow = (block) => {
+    block.classList.add('popup_opened');
+    document.addEventListener('keydown', closeByEscape);
+};
+
+function closeByEscape(evt) {
+    if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_opened')
+        popupHide(openedPopup);
+    }
+};
+
 export class Card  {
 
     constructor (data, cardSelector) {
