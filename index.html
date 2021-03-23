@@ -88,23 +88,20 @@
         </footer>
     </div>
 
-    <template id="card-template">
-        <div class="elements__item">
-            <img class="elements__item-image" alt="Пейзаж России" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg">
+    <template class="card-template">
+            <div class="elements__item card">
+                <img class="elements__item-image" alt="Пейзаж России" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg">
 
-            <div class="elements__text">
-                <p class="elements__item-title"></p>
+                <div class="elements__text">
+                    <p class="elements__item-title"></p>
 
-                <button class="elements__item-like" type="button"></button>
+                    <button class="elements__item-like" type="button"></button>
+                </div>
+
+                <button class="elements__item-trash" type="button"></button>
             </div>
-
-            <button class="elements__item-trash" type="button"></button>
-        </div>
     </template>
 
-    <script src="scripts/constants.js"></script>
-    <script src="scripts/validate.js"></script>
-    <script src="scripts/cards.js"></script>
-    <script src="scripts/popup.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
