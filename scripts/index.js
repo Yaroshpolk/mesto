@@ -45,6 +45,9 @@ import {FormValidator} from './FormValidator.js';
 const popupShow = (block) => {
     block.classList.add('popup_opened');
     document.addEventListener('keydown', closeByEscape);
+    photoValidation.clearErrors();
+    photoValidation.clearFields();
+    profileValidation.clearErrors();
 };
 
 // Функция скрытия попапа
@@ -100,7 +103,7 @@ editProfileBtn.addEventListener('click',() => {
 });
 addCardBtn.addEventListener('click', () => popupShow(popupsList.find((item) => {
     if (item.classList.contains('popup_add')) {
-        return item
+        return item;
     }
 })));
 
@@ -138,8 +141,8 @@ const validationFields = ({
     errorClass: 'form__input-error_active'
 });
 
-const profileValidation = new FormValidator(validationFields, addCardForm);
-const photoValidation = new FormValidator(validationFields, editForm);
+const photoValidation = new FormValidator(validationFields, addCardForm);
+const profileValidation = new FormValidator(validationFields, editForm);
 
 // Активируем валидацию форм
 profileValidation.enableValidation();

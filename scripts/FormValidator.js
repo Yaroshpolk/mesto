@@ -47,13 +47,13 @@ export class FormValidator {
     };
 
     // Метод меняющий состояние кнопки отправки формы
-    _toggleButtonState = (inputList, buttonElement) => {
-        if (this._hasInvalidInput(inputList)) {
-            buttonElement.classList.add(this._inactiveButtonClass);
-            buttonElement.disabled = true;
+    _toggleButtonState = () => {
+        if (this._hasInvalidInput()) {
+            this._buttonElement.classList.add(this._inactiveButtonClass);
+            this._buttonElement.disabled = true;
         } else {
-            buttonElement.classList.remove(this._inactiveButtonClass);
-            buttonElement.disabled = false;
+            this._buttonElement.classList.remove(this._inactiveButtonClass);
+            this._buttonElement.disabled = false;
         }
     };
 
@@ -66,16 +66,29 @@ export class FormValidator {
         this._inputsList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
                 this._checkInputValidity(inputElement);
-                this._toggleButtonState(this._inputsList, this._buttonElement);
+                this._toggleButtonState();
             })
         });
     };
+
+    clearErrors = () => {
+        this._inputsList.forEach((inputElement) => {
+            this._hideErrorMessage(inputElement);
+        });
+        this._toggleButtonState();
+    }
+
+    clearFields = () => {
+        this._inputsList.forEach((inputElement) => {
+           inputElement.value = "";
+        });
+    }
 
     enableValidation = () => {
         this._setEventListeners()
         this._formElement.addEventListener("submit", (evt) => {
             evt.preventDefault()
-            this._toggleButtonState(this._inputsList, this._buttonElement);
+            this._toggleButtonState();
         })
     };
 }

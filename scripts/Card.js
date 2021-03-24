@@ -1,9 +1,20 @@
 const imgContainer =  document.querySelector('.popup__img');
 const subImg = document.querySelector('.popup__subimg');
+const popupsList = Array.from(document.querySelectorAll('.popup'));
 
 const popupShow = (block) => {
     block.classList.add('popup_opened');
     document.addEventListener('keydown', closeByEscape);
+};
+
+// Функция скрытия попапа
+const popupHide = () => {
+    popupsList.find((item) => {
+        if (item.classList.contains('popup_opened')) {
+            item.classList.remove('popup_opened');
+            document.removeEventListener('keydown', closeByEscape);
+        }
+    });
 };
 
 function closeByEscape(evt) {
