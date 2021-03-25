@@ -1,26 +1,22 @@
 const imgContainer =  document.querySelector('.popup__img');
 const subImg = document.querySelector('.popup__subimg');
-const popupsList = Array.from(document.querySelectorAll('.popup'));
+const popupView = document.querySelector('.popup_view');
 
-const popupShow = (block) => {
-    block.classList.add('popup_opened');
+const showPopup = (popupElement) => {
+    popupElement.classList.add('popup_opened');
     document.addEventListener('keydown', closeByEscape);
 };
 
 // Функция скрытия попапа
-const popupHide = () => {
-    popupsList.find((item) => {
-        if (item.classList.contains('popup_opened')) {
-            item.classList.remove('popup_opened');
-            document.removeEventListener('keydown', closeByEscape);
-        }
-    });
+const hidePopup = (popupElement) => {
+    popupElement.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeByEscape);
 };
 
 function closeByEscape(evt) {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened')
-        popupHide(openedPopup);
+        hidePopup(openedPopup);
     }
 };
 
@@ -52,11 +48,13 @@ export class Card  {
     }
 
     _setEventListeners () {
-        this._element.querySelector('.elements__item-like').addEventListener('click', this._handleLikeIcon);
+        this._likeIcon = this._element.querySelector('.elements__item-like');
+
+        this._likeIcon.addEventListener('click', this._handleLikeIcon);
 
         this._element.querySelector('.elements__item-trash').addEventListener('click', this._handleDeleteCard);
 
-        this._element.querySelector('.elements__item-image').addEventListener('click', this._handlePreviewPicture);
+        this._image.addEventListener('click', this._handlePreviewPicture);
     }
 
     _handleDeleteCard = () => {
@@ -64,14 +62,15 @@ export class Card  {
     }
 
     _handleLikeIcon = () => {
-        this._element.querySelector('.elements__item-like').classList.toggle('elements__item-like_active');
+        this._likeIcon.classList.toggle('elements__item-like_active');
     }
 
     _handlePreviewPicture = () => {
         imgContainer.src = this._link;
+        imgContainer.alt = this._name;
         subImg.textContent = this._name;
 
-        popupShow(document.querySelector('.popup_view'));
+        showPopup(popupView);
     }
 }
 
