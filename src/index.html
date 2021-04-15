@@ -17,10 +17,10 @@
 
                 <div class="profile__info">
                     <div class="profile__info-item">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <h1 class="profile__name"></h1>
                         <button class="profile__btn profile__btn_edit" type="button"></button>
                     </div>
-                        <p class="profile__about">Исследователь океана</p>
+                        <p class="profile__about"></p>
                 </div>
 
                 <button class="profile__btn profile__btn_add" type="button"></button>
@@ -59,16 +59,27 @@
                 <h3 class="popup__title">Новое место</h3>
                 <form class="form" name="addCardForm" novalidate>
                     <label class="form__field">
-                        <input class="form__input" id="title-input" type="text" placeholder="Название" name="title" minlength="2" maxlength="30" required>
+                        <input class="form__input" id="title-input" type="text" placeholder="Название" name="name" minlength="2" maxlength="30" required>
                         <span class="form__input-error title-input-error"></span>
                     </label>
 
                     <label class="form__field">
-                        <input class="form__input" id="source-input" type="url" placeholder="Ссылка на картинку" name="source" required>
+                        <input class="form__input" id="source-input" type="url" placeholder="Ссылка на картинку" name="link" required>
                         <span class="form__input-error source-input-error"></span>
                     </label>
 
                     <button class="form__submit" type="submit" disabled>Создать</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_delete">
+            <div class="popup__container">
+                <button class="popup__close-btn" type="button"></button>
+
+                <h3 class="popup__title">Вы уверены?</h3>
+                <form class="form" name="addCardForm" novalidate>
+                    <button class="form__submit" type="submit" disabled>Да</button>
                 </form>
             </div>
         </section>
@@ -93,7 +104,10 @@
                 <div class="elements__text">
                     <p class="elements__item-title"></p>
 
-                    <button class="elements__item-like" type="button"></button>
+                    <div class="elements__group">
+                        <button class="elements__item-like" type="button"></button>
+                        <p class="elements__like-count">0</p>
+                    </div>
                 </div>
 
                 <button class="elements__item-trash" type="button"></button>

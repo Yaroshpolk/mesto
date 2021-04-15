@@ -10,34 +10,7 @@ export const validationFields = ({
 export const profileSelectors = {
     nameSelector: '.profile__name',
     aboutSelector: '.profile__about'
-}
-
-export const initialCards = [
-    {
-        title: 'Архыз',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        title: 'Челябинская область',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        title: 'Иваново',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        title: 'Камчатка',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        title: 'Холмогорский район',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        title: 'Байкал',
-        source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
+};
 
 export const addCardBtn = document.querySelector('.profile__btn_add');
 export const editProfileBtn = document.querySelector('.profile__btn_edit');
@@ -47,3 +20,11 @@ export const addCardForm = document.querySelector('form[name="addCardForm"]');
 
 export const nameField = editForm.elements.name;
 export const aboutField = editForm.elements.about;
+
+export const profileAvatar = document.querySelector('.profile__avatar');
+export const profileName = document.querySelector(profileSelectors.nameSelector);
+export const profileAbout = document.querySelector(profileSelectors.aboutSelector);
+
+export const cardLikes = document.querySelector('.elements__like-count');
+
+export let userId;

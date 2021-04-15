@@ -6,11 +6,25 @@ import FormValidator from "../scripts/components/FormValidator.js";
 import PopupWithImage from "../scripts/components/PopupWithImage.js";
 import PopupWithForm from "../scripts/components/PopupWithForm.js";
 import UserInfo from "../scripts/components/UserInfo.js";
+import Api from "../scripts/components/Api.js";
 
-const popupView = new PopupWithImage('.popup_view');
+const api = new Api({
+    baseUrl : 'https://mesto.nomoreparties.co/v1/cohort-22',
+    token : '312a0732-cbcd-4979-9e85-1354911a9934'
+});
+
+// Отображение информации о пользователе
+api.getUserInfo().then((data) => {
+   Constants.profileName.textContent = data.name;
+   Constants.profileAbout.textContent = data.about;
+   Constants.profileAvatar.src = data.avatar;
+});
+
+api.getInitialCards().then((item) => {
+    initialCardList.renderItem(item);
+});
 
 const initialCardList = new Section ({
-        data: Constants.initialCards,
         renderer: (item) => {
             initialCardList.appendItem(createCard(item));
         },
@@ -22,16 +36,20 @@ const userInfo = new UserInfo({
     aboutSelector: Constants.profileSelectors.aboutSelector
 });
 
+const popupView = new PopupWithImage('.popup_view');
+
 const popupEdit = new PopupWithForm(
     '.popup_edit',
     (formValues) => {
-        userInfo.setUserInfo(formValues);
+        api.editUserInfo({name: formValues.name, about: formValues.about})
+            .then(data => userInfo.setUserInfo(data));
     }
 );
 
 const popupAdd = new PopupWithForm(
     '.popup_add',
     (item) => {
+        api.addCard({name : item.name, link : item.link});
         initialCardList.prependItem(createCard(item));
     });
 
@@ -66,5 +84,3 @@ Constants.addCardBtn.addEventListener('click', () => {
 
 editProfileValidation.enableValidation();
 addCardValidation.enableValidation();
-
-initialCardList.renderItem();

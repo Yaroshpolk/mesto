@@ -45,6 +45,8 @@
 @import url('../blocks/elements/__item/elements__item.css');
 @import url('../blocks/elements/__item-image/elements__item-image.css');
 @import url('../blocks/elements/__item-like/elements__item-like.css');
+@import url('../blocks/elements/__group/elements__group.css');
+@import url('../blocks/elements/__like-count/elements__like-count.css');
 @import url('../blocks/elements/__item-like/_active/elements__item-like_active.css');
 @import url('../blocks/elements/__item-trash/elements__item-trash.css');
 @import url('../blocks/elements/__item-title/elements__item-title.css');
