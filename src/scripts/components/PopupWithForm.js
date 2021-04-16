@@ -7,6 +7,7 @@ export default class PopupWithForm extends Popup {
         this._formElement = document.querySelector(popupSelector).querySelector('.form');
     }
 
+    // Метод получения значений из полей
     _getInputValues() {
         this._formValues = {};
         this._inputList = this._formElement.querySelectorAll('.form__input');
@@ -16,6 +17,7 @@ export default class PopupWithForm extends Popup {
         return this._formValues;
     }
 
+    // Метод установки слушателей
     setEventListeners() {
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
@@ -25,6 +27,7 @@ export default class PopupWithForm extends Popup {
         super.setEventListeners();
     }
 
+    // Метод закрытия попапа
     close() {
         this._formElement.reset();
         super.close();

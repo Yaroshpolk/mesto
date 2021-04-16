@@ -1,5 +1,4 @@
 export default class FormValidator {
-
     constructor (config, formElement) {
         this._formElement = formElement;
         this._inputSelector = config.inputSelector;
@@ -70,6 +69,7 @@ export default class FormValidator {
         });
     };
 
+    // Метод очищающий форму от ошибок
     clearErrors() {
         this._inputsList.forEach((inputElement) => {
             this._hideErrorMessage(inputElement);
@@ -77,12 +77,14 @@ export default class FormValidator {
         this._toggleButtonState();
     }
 
+    // Метод очищающий поля формы
     clearFields() {
         this._inputsList.forEach((inputElement) => {
            inputElement.value = "";
         });
     }
 
+    // Метод запускающий валидацию форм
     enableValidation() {
         this._setEventListeners()
         this._formElement.addEventListener("submit", (evt) => {
