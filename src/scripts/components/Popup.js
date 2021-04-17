@@ -41,9 +41,4 @@ export default class Popup {
         this._popupElement.classList.remove('popup_opened');
         document.removeEventListener('keydown', this._handleClose);
     }
-
-    // Метод определяющий статус операции попапа
-    inProcessMsg(inProcess) {
-        inProcess ? this._popupSubmitBtn.textContent = 'Сохранение...' : this._popupSubmitBtn.textContent = 'Сохранить';
-    }
 }
