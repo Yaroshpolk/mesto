@@ -61,11 +61,9 @@ const createCard = ({name, link, likes, owner, _id} , selector,
                         popupDeleteCard.setSubmit(() => {
                             api.deleteCard(card.getCardId())
                                 .then(() => card.handleDeleteCardElement())
+                                .then(() => popupDeleteCard.close())
                                 .catch((err) => {
                                     console.log(`Ошибка удаления поста: ${err.status}`)
-                                })
-                                .finally(() => {
-                                    popupDeleteCard.close();
                                 })
                         });
                     },
@@ -107,13 +105,12 @@ const popupEditAvatar = new PopupWithForm(
         inProcessMsg(popupEditAvatar, true);
         api.changeAvatar(data.src)
             .then((link) => userInfo.setAvatar(link.avatar))
-
+            .then(() => popupEditAvatar.close())
             .catch((err) => {
                 console.log(`Ошибка редактирования автара: ${err.message}`)
             })
             .finally(() => {
                 inProcessMsg(popupEditAvatar, false);
-                popupEditAvatar.close();
             });
     }
     );
@@ -125,12 +122,12 @@ const popupEdit = new PopupWithForm(
         inProcessMsg(popupEdit, true);
         api.editUserInfo({name: data.name, about: data.about})
             .then((data) => userInfo.setUserInfo(data))
+            .then(() => popupEdit.close())
             .catch((err) => {
                 console.log(`Ошибка редактирования данных пользователя: ${err.message}`)
             })
             .finally(() => {
                 inProcessMsg(popupEdit, false);
-                popupEdit.close();
             });
     }
 );
@@ -144,12 +141,12 @@ const popupAdd = new PopupWithForm(
             .then((data) => {
                 initialCardList.prependItem(createCard(data, constants.cardTemplateSelector));
             })
+            .then(() => popupAdd.close())
             .catch((err) => {
                 console.log(`Ошибка создания поста: ${err.status}`)
             })
             .finally(() => {
                 inProcessMsg(popupAdd, false);
-                popupAdd.close();
             });
     });
 
