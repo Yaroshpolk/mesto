@@ -27,3 +27,12 @@ export const aboutField = editForm.elements.about;
 export const profileAvatar = document.querySelector('.profile__avatar');
 export const profileName = document.querySelector(profileSelectors.nameSelector);
 export const profileAbout = document.querySelector(profileSelectors.aboutSelector);
+
+export const cardTemplateSelector = '.card-template';
+export const cardsContainerSelector = '.elements__list';
+
+export const popupAddSelector = '.popup_add';
+export const popupEditSelector = '.popup_edit';
+export const popupAvatarSelector = '.popup_avatar';
+export const popupDeleteCardSelector = '.popup_delete';
+export const popupViewSelector = '.popup_view';

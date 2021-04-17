@@ -15,12 +15,16 @@ export default class UserInfo {
 
     // Метод изменения инофрмации о пользователе
     setUserInfo({ name, about }) {
-        this._nameUser.textContent = name;
-        this._aboutUser.textContent = about;
+        if (name && about) {
+            this._nameUser.textContent = name;
+            this._aboutUser.textContent = about;
+        }
     }
 
     // Метод изменения аватара пользователя
     setAvatar(link) {
-        this._userAvatar.src = link;
+        if (link) {
+            this._userAvatar.src = link;
+        }
     }
 }

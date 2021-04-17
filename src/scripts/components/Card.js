@@ -35,7 +35,7 @@ export default class Card {
     // Метод устанавливающий слушателей карточке
     _setEventListeners() {
         this._buttonLike.addEventListener('click', () => {
-            if (this.checkForLike()) {
+            if (this._checkForLike()) {
                 this._handleRemoveLike(this);
                 this._handleLikeButton();
             } else {
@@ -54,22 +54,22 @@ export default class Card {
         this._cardElement.src = this._link;
         this._cardElement.alt = this._name;
         this._cardItem.querySelector('.elements__item-title').textContent = this._name;
-        this.checkForLike() ? this._buttonLike.classList.add('elements__item-like_active') : this._buttonLike.classList.remove('elements__item-like_active');
-        this.setLikes();
-        this.delButtonVisibility();
+        this._checkForLike() ? this._buttonLike.classList.add('elements__item-like_active') : this._buttonLike.classList.remove('elements__item-like_active');
+        this._setLikes();
+        this._delButtonVisibility();
 
         return this._cardItem;
     };
 
     // Метод отображения кнопки удаления карточки
-    delButtonVisibility() {
+    _delButtonVisibility() {
         if(this.cardOwnerId === this.currentUserId) {
             this._buttonDelete.classList.add('elements__item-trash_visible');
         }
     }
 
     // Метод установки кол-ва лайков в соотв. поле
-    setLikes() {
+    _setLikes() {
         this._cardTemplate.querySelector('.elements__like-count').textContent = this.likesCount;
     }
 
@@ -84,7 +84,7 @@ export default class Card {
     }
 
     // Метод проверки карточки на наличие лайка от текущего пользователя
-    checkForLike() {
+    _checkForLike() {
         return Boolean(this.likes.find((like) => like._id === this.currentUserId))
     }
 
@@ -92,7 +92,7 @@ export default class Card {
     updateLikes(data) {
         this.likes = data;
         this.likesCount = data.length;
-        this.setLikes();
-        this.checkForLike();
+        this._setLikes();
+        this._checkForLike();
     }
 };
