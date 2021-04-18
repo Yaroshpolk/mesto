@@ -15,5 +15,5 @@ ___
 
 
 ####Ссылка на демо: https://yaroshpolk.github.io/mesto/
-v1.0
+v2.0
 ___
